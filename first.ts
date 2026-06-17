@@ -1,5 +1,5 @@
 let fname: string = "Thanmongkhol";
-let lname: string = "Singsatit";
+let lname: string = "Singsathit";
 let course: string = "Object-Oriented Programming";
 let mark1: number = 80;
 let mark2: number = 90;
@@ -16,7 +16,7 @@ console.log(courses[2], marks[2]);
 console.log("\n");
 
 let fname2: string = "Thanmongkhol";
-let lname2: string = "Singsatit";
+let lname2: string = "Singsathit";
 let age: number = 18;
 let djob: string = "Programmer";
 let total2: number = marks[0] + marks[1] + marks[2];
