@@ -7,7 +7,7 @@ let total: number = mark1 + mark2;
 let pass: boolean = true;
 console.log("Name: %s %s \nCourse: %s | Mark: %d | Pass: %s", fname,lname,course,total,pass);
 
-let marks: number[] = [80, 90, 85];
+let marks: number[] = [75, 90, 80];
 let courses: string[] = ["Database", "Programming", "Web Development"];
 console.log(courses[0], marks[0]);
 console.log(courses[1], marks[1]);
