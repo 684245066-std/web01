@@ -15,8 +15,8 @@ console.log(courses[2], marks[2]);
 
 console.log("\n");
 
-let fname2: string = "Jirawat";
-let lname2: string = "Ouamsaard";
+let fname2: string = "Thanmongkhol";
+let lname2: string = "Singsatit";
 let age: number = 18;
 let djob: string = "Programmer";
 let total2: number = marks[0] + marks[1] + marks[2];
