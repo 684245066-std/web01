@@ -1,13 +1,25 @@
-import { StudentDAO } from "./StudentDAO.ts";
-const studentDAO = new StudentDAO();
+import { OrderDAO } from "./OrderDAO";
+import { ProductDAO } from "./ProductDAO";
 
-studentDAO.insert("STD-001", "Somchai Jaidee", 3.85);
-studentDAO.insert("STD-002", "Somsri Deeja", 3.20);
-studentDAO.insert("STD-003", "Somnuek Jaidee", 3.50);
-studentDAO.insert("STD-004", "Somying Deeja", 3.10);
+const productDAO = new ProductDAO();
 
-const students = studentDAO.findAll();
+productDAO.addProduct("Laptop", 1000, 10);
+productDAO.addProduct("Mouse", 25, 50);
+productDAO.addProduct("Keyboard", 75, 25);
 
-students.forEach(s => {
-    console.log(s.getInfo());
+const products = productDAO.findAll();
+products.forEach((product) => {
+  console.log(product.getInfo());
 });
+
+console.log("=====================================");
+
+const product = productDAO.findProductById(2);
+console.log(product?.getInfo());
+
+console.log("=====================================");
+
+if (product) {
+  const orderDAO = new OrderDAO();
+  orderDAO.createOrder(product.getId(), 5);
+}
