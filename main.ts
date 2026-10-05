@@ -1,25 +1,19 @@
-import { OrderDAO } from "./OrderDAO";
-import { ProductDAO } from "./ProductDAO";
+import { BookDAO } from "./BookDAO.ts";
+import { BorrowRecordDAO } from "./BorrowRecordDAO.ts";
 
-const productDAO = new ProductDAO();
+const bookDAO = new BookDAO();
+const borrowRecordDAO = new BorrowRecordDAO();
 
-productDAO.addProduct("Laptop", 1000, 10);
-productDAO.addProduct("Mouse", 25, 50);
-productDAO.addProduct("Keyboard", 75, 25);
+bookDAO.insert("101", "Clean Code", "Robert C. Martin");
+bookDAO.insert("102", "TypeScript Master", "John Doe");
+bookDAO.insert("103", "Design Patterns", "Gang of Four");
 
-const products = productDAO.findAll();
-products.forEach((product) => {
-  console.log(product.getInfo());
+// ทำรายการยืมหนังสือ (เรียกใช้ผ่าน insert แทน borrowBook ตามสไตล์ของคุณ)
+borrowRecordDAO.insert("Alice", "101");
+borrowRecordDAO.insert("Bob", "101"); // ธุรกรรมนี้จะถูก Reject อัตโนมัติ เพราะ Alice ยืมไปแล้ว
+
+const books = bookDAO.findAll();
+
+books.forEach((b) => {
+  console.log(b.getInfo());
 });
-
-console.log("=====================================");
-
-const product = productDAO.findProductById(2);
-console.log(product?.getInfo());
-
-console.log("=====================================");
-
-if (product) {
-  const orderDAO = new OrderDAO();
-  orderDAO.createOrder(product.getId(), 5);
-}
