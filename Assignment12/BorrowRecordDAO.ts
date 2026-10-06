@@ -21,7 +21,6 @@ export class BorrowRecordDAO extends BaseDAO {
         `);
   }
 
-  // ใช้คำว่า insert ตามสไตล์ของคุณ แต่ใส่ Business Logic ของการยืมหนังสือไว้ภายใน
   public insert(borrowerName: string, isbn: string): boolean {
     const b = this.bookDao.findBookByIsbn(isbn);
 
